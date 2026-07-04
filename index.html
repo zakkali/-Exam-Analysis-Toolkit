@@ -50,7 +50,7 @@
             border-radius: 15px;
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            animation: fadeInDown 1s ease-out; /* حركة الهيدر */
+            animation: fadeInDown 1s ease-out;
         }
         header h1 {
             margin-top: 0;
@@ -84,15 +84,12 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 4px solid var(--primary-color);
-            opacity: 0; /* مخفي في البداية لتطبيق الحركة */
+            opacity: 0;
             animation: fadeInUp 0.8s ease-out forwards;
         }
         
-        /* تأخير ظهور البطاقات واحدة تلو الأخرى */
         .card:nth-child(1) { animation-delay: 0.2s; }
         .card:nth-child(2) { animation-delay: 0.4s; }
-        .card:nth-child(3) { animation-delay: 0.6s; }
-        .card:nth-child(4) { animation-delay: 0.8s; }
 
         .card:hover {
             transform: translateY(-8px);
@@ -132,11 +129,11 @@
         }
         .btn-youtube {
             background-color: #ff0000;
-            animation: pulse 2s infinite; /* حركة النبض المستمرة */
+            animation: pulse 2s infinite;
         }
         .btn-youtube:hover {
             background-color: #cc0000;
-            animation: none; /* إيقاف النبض عند مرور الماوس */
+            animation: none;
             transform: scale(1.05);
         }
 
@@ -150,7 +147,6 @@
             opacity: 0;
             animation: fadeInUp 0.8s ease-out forwards;
         }
-        /* تأخير ظهور التنبيهات */
         .alert:nth-of-type(1) { animation-delay: 1.2s; }
         .alert:nth-of-type(2) { animation-delay: 1.4s; }
         .alert:nth-of-type(3) { animation-delay: 1.6s; }
@@ -195,34 +191,22 @@
     </header>
 
     <h2>🌟 نبذة عن المشروع</h2>
-    <p style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;">هذه الحقيبة تحتوي على أربعة ملفات إكسيل مبرمجة (VBA) لتسهيل عملية إدخال وتحليل درجات الطلاب في الاختبارات (القصيرة والنهائية). الملفات مصممة بواجهات إدخال سهلة الاستخدام تمنع الأخطاء البشرية، وتقوم بإصدار تقارير تحليلية ومؤشرات إتقان فورية دون أي تدخل يدوي.</p>
+    <p style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;">هذه الحقيبة تحتوي على ملفات إكسيل مبرمجة (VBA) لتسهيل عملية إدخال وتحليل درجات الطلاب في الاختبارات بمختلف أنواعها. الملفات مصممة بواجهات إدخال ديناميكية وذكية تتكيف تلقائياً مع حجم اختبارك، لتمنع الأخطاء البشرية وتقوم بإصدار تقارير تحليلية ومؤشرات إتقان فورية دون أي تدخل يدوي.</p>
 
     <h2>📥 روابط التحميل (الإصدارات المتاحة)</h2>
-    <p style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;">اختر الملف الذي يناسب نوع اختبارك والأهداف التعليمية المطلوبة، وقم بتحميله مباشرة من روابط جوجل درايف التالية:</p>
+    <p style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;">اختر الملف الذي يناسب الأهداف التعليمية المطلوبة. كلا الملفين صالحان لجميع أنواع الاختبارات (القصيرة، الفترية، والنهائية):</p>
 
     <div class="grid-container">
         <div class="card">
-            <h3>📘 أهداف معرفية (40 مفردة)</h3>
-            <p>مخصص للاختبارات النهائية الطويلة. يشمل أهداف: معرفي، تطبيق، استدلال.</p>
+            <h3>📘 أهداف معرفية (مرن حتى 40 مفردة)</h3>
+            <p><strong>صالح لجميع الاختبارات (قصيرة، فترية، نهائية).</strong> واجهة ذكية تتكيف تلقائياً مع عدد أسئلتك. يشمل الأهداف: معرفي، تطبيق، استدلال.</p>
             <a href="https://drive.google.com/file/d/1lV21vd5Jjk2pxqDrOOvSeDrYIN7y_3Fd/view?usp=drivesdk" target="_blank" class="btn">تحميل من جوجل درايف</a>
         </div>
         
-        <div class="card">
-            <h3>📗 أهداف معرفية (20 مفردة)</h3>
-            <p>مخصص للاختبارات القصيرة والفترية. يشمل أهداف: معرفي، تطبيق، استدلال.</p>
-            <a href="https://drive.google.com/file/d/1vlOYj-X8N9WbMctWD6JBq8zJ8rNHqsd2/view?usp=drivesdk" target="_blank" class="btn">تحميل من جوجل درايف</a>
-        </div>
-
         <div class="card" style="border-top-color: #e67e22;">
-            <h3>📙 أهداف قياس AO (40 مفردة)</h3>
-            <p>مخصص للاختبارات النهائية. يشمل معايير القياس AO1 و AO2.</p>
+            <h3>📙 أهداف قياس AO (مرن حتى 40 مفردة)</h3>
+            <p><strong>صالح لجميع الاختبارات (قصيرة، فترية، نهائية).</strong> واجهة ذكية تتكيف تلقائياً مع عدد أسئلتك. يشمل معايير القياس AO1 و AO2.</p>
             <a href="https://drive.google.com/file/d/1nGTyjoUUjbr3uIK7aI8WyC1nyWX_hh_H/view?usp=drivesdk" target="_blank" class="btn" style="background-color: #e67e22;">تحميل من جوجل درايف</a>
-        </div>
-
-        <div class="card" style="border-top-color: #c0392b;">
-            <h3>📕 أهداف قياس AO (20 مفردة)</h3>
-            <p>مخصص للاختبارات القصيرة. يشمل معايير القياس AO1 و AO2.</p>
-            <a href="https://drive.google.com/file/d/1J9qO0CsoOHAo3kXubnhGHh31L-Ma_nAV/view?usp=drivesdk" target="_blank" class="btn" style="background-color: #c0392b;">تحميل من جوجل درايف</a>
         </div>
     </div>
 
@@ -230,24 +214,24 @@
     <ul>
         <li><strong>تنزيل الملف:</strong> قم بتحميل الملف المناسب لاحتياجك من الروابط أعلاه.</li>
         <li><strong>فتح الواجهة:</strong> من شيت "إعدادات الاختبار"، اضغط على الزر المخصص لفتح واجهة الإدخال.</li>
-        <li><strong>تسجيل البيانات:</strong> أدخل أرقام الأسئلة، اختر المستوى من القائمة المنسدلة، وحدد درجة السؤال.</li>
-        <li><strong>رصد الدرجات:</strong> انتقل لشيت "درجات الطلاب" واستخدم الواجهة لإدخال درجات الطلاب بسرعة وسلاسة.</li>
+        <li><strong>تسجيل البيانات:</strong> أدخل أرقام الأسئلة، اختر المستوى من القائمة المنسدلة، وحدد درجة السؤال (حتى 40 سؤالاً كحد أقصى).</li>
+        <li><strong>رصد الدرجات:</strong> انتقل لشيت "درجات الطلاب" واستخدم الواجهة لإدخال درجات الطلاب بسرعة وسلاسة، وستلاحظ أن واجهة الرصد تخفي الأسئلة الزائدة وتتكيف مع اختبارك.</li>
         <li><strong>التحليل التلقائي:</strong> ستجد كافة المؤشرات ونسب الإتقان قد تم حسابها تلقائياً.</li>
     </ul>
 
     <div class="youtube-section">
         <h3 style="margin-top: 0;">🎥 فيديو شرح الاستخدام</h3>
         <p>لمعرفة كيفية إعداد الملفات والبدء في استخدامها خطوة بخطوة، ننصحك بمشاهدة هذا الشرح التفصيلي:</p>
-        <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="btn btn-youtube">▶️ مشاهدة الشرح على يوتيوب</a>
+        <a href="https://youtu.be/cf_ksKJW5J8" target="_blank" class="btn btn-youtube">▶️ مشاهدة الشرح على يوتيوب</a>
     </div>
 
-    <h2>⚠️ مشاكل شائعة وكيفية حلها بسهولة</h2>
-    <p style="opacity: 0; animation: fadeInUp 0.8s ease-out 1.1s forwards;">لتجنب أي توقف للأزرار البرمجية، يرجى قراءة هذه الملاحظات الهامة:</p>
+    <h2>⚠️ ملاحظات هامة لضمان عمل الملف بكفاءة</h2>
+    <p style="opacity: 0; animation: fadeInUp 0.8s ease-out 1.1s forwards;">لتجربة سلسة وخالية من الأخطاء، يرجى الانتباه للنقاط التالية:</p>
 
     <div class="alert alert-red">
         <strong>🔴 1. رسالة الخطأ الحمراء (تم حظر الماكرو لأسباب أمنية)</strong><br>
         إذا ظهر لك شريط أحمر يمنع تشغيل الأكواد، فذلك بسبب نظام حماية الويندوز. 
-        <br><strong>الحل:</strong> أغلق الملف > كليك يمين واختر خصائص (Properties) > ضع علامة صح ✅ على مربع "إلغاء الحظر" (Unblock) في الأسفل > اضغط موافق.
+        <br><strong>الحل:</strong> أغلق الملف > كليك يمين على الملف واختر خصائص (Properties) > ضع علامة صح ✅ على مربع "إلغاء الحظر" (Unblock) في الأسفل > اضغط موافق.
     </div>
 
     <div class="alert alert-yellow">
@@ -257,13 +241,13 @@
     </div>
 
     <div class="alert alert-blue">
-        <strong>💾 3. حفظ الملف</strong><br>
-        <strong>الحل:</strong> عند الإغلاق لا تغير صيغة الملف، يجب أن يبقى <code>Excel Macro-Enabled Workbook (.xlsm)</code>. حفظ الملف كإكسيل عادي سيمسح جميع الأكواد البرمجية.
+        <strong>💾 3. حفظ وإغلاق الملف بسلاسة</strong><br>
+        لتوفير تجربة احترافية تشبه البرامج المستقلة، تم برمجة الملف ليقوم بإخفاء شريط أدوات الإكسيل. عند الانتهاء من عملك، كل ما عليك فعله هو إغلاق الملف (من علامة X الحمراء أعلى الشاشة) والضغط على <strong>"حفظ" (Save)</strong>. لا تقلق بشأن صيغة الملف، فهو مبرمج ليحافظ على صيغته الآمنة <code>(.xlsm)</code> تلقائياً.
     </div>
 
     <div class="alert alert-green">
         <strong>🔐 4. حماية المعادلات</strong><br>
-        تم حماية صفحات العرض بكلمة مرور خفيفة لمنع المسح الخاطئ للمعادلات أثناء العمل. يرجى عدم محاولة الكتابة اليدوية فوق الخلايا المحمية واستخدام الواجهة بدلاً من ذلك.
+        تم حماية صفحات العرض بكلمة مرور خفيفة لمنع المسح الخاطئ للمعادلات أثناء العمل. يرجى عدم محاولة الكتابة اليدوية فوق الخلايا المحمية واستخدام واجهات الإدخال بدلاً من ذلك.
     </div>
 
     <div class="footer">
