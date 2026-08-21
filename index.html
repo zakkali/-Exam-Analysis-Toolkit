@@ -22,7 +22,7 @@
             padding: 0;
         }
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -42,10 +42,10 @@
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
         }
         
-        /* تأثير النبض الخاص بزر التحميل */
+        /* تأثير النبض الخاص بأزرار التحميل */
         @keyframes downloadPulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.8); }
-            50% { transform: scale(1.08); box-shadow: 0 0 20px 15px rgba(46, 204, 113, 0); }
+            50% { transform: scale(1.05); box-shadow: 0 0 15px 10px rgba(46, 204, 113, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
         }
 
@@ -79,74 +79,102 @@
             animation: fadeInUp 1s ease-out;
         }
         
-        /* تعديل البطاقة لتكون في المنتصف */
-        .single-card-container {
+        /* تصميم حاوية بطاقات التحميل التفاعلية */
+        .cards-container {
             display: flex;
+            gap: 20px;
             justify-content: center;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
         }
         
         .card {
             background: var(--card-bg);
-            padding: 40px 30px;
-            border-radius: 10px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 5px solid #2ecc71;
             opacity: 0;
             animation: fadeInUp 0.8s ease-out forwards;
-            max-width: 600px;
+            flex: 1 1 380px;
+            max-width: 440px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
+        .card-pro {
+            border-top: 6px solid #27ae60;
+            background: linear-gradient(to bottom, #ffffff, #f4fbf7);
+        }
+
+        .card-classic {
+            border-top: 6px solid #2980b9;
+            background: linear-gradient(to bottom, #ffffff, #f4f8fb);
+        }
+
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 25px rgba(0,0,0,0.15);
         }
+        
         .card h3 {
             margin-top: 0;
-            color: #2c3e50;
-            font-size: 1.6em;
+            font-size: 1.4em;
         }
+        .card-pro h3 { color: #1e824c; }
+        .card-classic h3 { color: #1f618d; }
+
+        .card p {
+            color: #555;
+            font-size: 0.98em;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        /* تنسيق أزرار التحميل */
         .btn {
             display: inline-block;
-            background-color: var(--primary-color);
             color: white;
             padding: 12px 25px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
-            margin-top: 20px;
+            margin-top: 15px;
             text-align: center;
             transition: background 0.3s, transform 0.3s;
-            font-size: 1.1em;
+            font-size: 1.05em;
         }
-        .btn:hover {
-            background-color: #1a5c37;
+
+        .btn-download-pro {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            font-size: 1.15em;
+            padding: 14px 25px;
+            border-radius: 50px;
+            color: #fff !important;
+            animation: downloadPulse 2s infinite;
+            border: none;
+            box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+        }
+        .btn-download-pro:hover {
+            background: linear-gradient(135deg, #229954, #27ae60);
+            animation: none;
             transform: scale(1.05);
         }
 
-        /* تنسيق زر التحميل البارز الجديد */
-        .btn-download {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
-            font-size: 1.4em;
-            padding: 15px 35px;
+        .btn-download-classic {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+            font-size: 1.15em;
+            padding: 14px 25px;
             border-radius: 50px;
-            border: 2px solid #fff;
             color: #fff !important;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            animation: downloadPulse 2s infinite;
-            margin-top: 30px;
-            display: block;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
+            border: none;
+            box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3);
         }
-        .btn-download:hover {
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-            animation: none;
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.4);
+        .btn-download-classic:hover {
+            background: linear-gradient(135deg, #1f618d, #2980b9);
+            transform: scale(1.05);
         }
         
         /* مميزات الأداة */
@@ -276,25 +304,38 @@
         <p>يتميز الملف بقدرته الفائقة على قراءة نموذج الإجابة (الوورد) واستيراد الأهداف وتوزيع الدرجات آلياً، بالإضافة إلى واجهة رصد درجات استثنائية تسمح لك <strong>بالتنقل بين الأسئلة بسلاسة باستخدام (مفاتيح الأسهم)</strong> في لوحة المفاتيح، مما يمنحك سرعة هائلة.</p>
     </div>
 
-    <h2>📥 رابط التحميل الموحد</h2>
-    <p style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;">قم بتحميل الإصدار الشامل والمجاني الذي يغطي كافة احتياجاتك التحليلية من الزر أدناه:</p>
+    <h2>📥 روابط التحميل (اختر النسخة المناسبة لجهازك)</h2>
+    <p style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;">اختر إحدى النسختين التاليتين بناءً على إمكانيات جهازك وإصدار برنامج الأوفيس المثبت لديك:</p>
 
-    <div class="single-card-container">
-        <div class="card">
-            <h3>📘 الإصدار الشامل (مرن حتى 40 مفردة)</h3>
-            <p><strong>صالح لجميع المواد والاختبارات (قصيرة، فترية، نهائية).</strong><br>واجهة ذكية تتكيف تلقائياً مع عدد أسئلتك، وتدعم جميع أنواع الأهداف (المعرفية: تذكر، فهم، تطبيق... أو معايير القياس AO1, AO2).</p>
-            
-            <!-- تم التعديل هنا ليكون الزر بارزاً وجاذباً للانتباه -->
-            <a href="https://drive.google.com/file/d/1lV21vd5Jjk2pxqDrOOvSeDrYIN7y_3Fd/view?usp=drivesdk" target="_blank" class="btn btn-download">
-                ⬇️ اضغط هنا لتحميل الملف الشامل الآن
+    <div class="cards-container">
+        <!-- بطاقة أوفيس 365 / الأجهزة الحديثة -->
+        <div class="card card-pro">
+            <h3>⚡ نسخة أوفيس 365 (الأجهزة الحديثة)</h3>
+            <p>
+                <strong>مصممة لأقصى سرعة وأعلى أداء.</strong><br>
+                تعتمد على دوال المصفوفات الديناميكية الحديثة (SPILL) الخفيفة والسريعة جداً. تناسب المستخدمين الذين يعملون على أوفيس 365 أو أوفيس 2021+ ولديهم أجهزة حديثة.
+            </p>
+            <a href="https://drive.google.com/file/d/1vlOYj-X8N9WbMctWD6JBq8zJ8rNHqsd2/view?usp=drive_link" target="_blank" class="btn btn-download-pro">
+                🚀 تحميل نسخة أوفيس 365
             </a>
-            
+        </div>
+
+        <!-- بطاقة النسخة القياسية / الأجهزة العادية -->
+        <div class="card card-classic">
+            <h3>📘 النسخة القياسية (الأجهزة العادية)</h3>
+            <p>
+                <strong>مصممة للتوافق الكامل مع جميع الأجهزة.</strong><br>
+                تعمل بالطرق القياسية والمستقرة لتناسب الأجهزة المتوسطة أو القديمة ونسخ الأوفيس السابقة (Excel 2016, 2019 وغيرها) بمرونة وأمان تام.
+            </p>
+            <a href="https://drive.google.com/file/d/1lV21vd5Jjk2pxqDrOOvSeDrYIN7y_3Fd/view?usp=drivesdk" target="_blank" class="btn btn-download-classic">
+                ⬇️ تحميل النسخة القياسية
+            </a>
         </div>
     </div>
 
     <h2>🚀 طريقة الاستخدام</h2>
     <ul>
-        <li><strong>تنزيل الملف:</strong> قم بتحميل الملف الشامل من الرابط أعلاه.</li>
+        <li><strong>تنزيل الملف:</strong> قم بتحميل النسخة المناسبة لجهازك من الرابطين أعلاه.</li>
         <li><strong>الاستيراد الآلي:</strong> من شيت "إعدادات الاختبار"، يمكنك استخدام زر استيراد الأهداف من نموذج الإجابة (Word) ليقوم الملف بضبط نفسه تلقائياً.</li>
         <li><strong>الإعداد اليدوي (اختياري):</strong> يمكنك إدخال أرقام الأسئلة واختيار الأهداف يدوياً من القائمة المنسدلة وتحديد درجة كل سؤال.</li>
         <li><strong>رصد الدرجات:</strong> انتقل لشيت "درجات الطلاب" واستخدم الواجهة لإدخال درجات الطلاب بسرعة فائقة.</li>
@@ -334,6 +375,11 @@
 
     <h2>❓ الأسئلة الشائعة (FAQ)</h2>
     
+    <div class="faq-item">
+        <h4>كيف أختار بين "نسخة أوفيس 365" و "النسخة القياسية"؟</h4>
+        <p>إذا كان جهازك حديثاً وتستخدم برنامج أوفيس 365 أو أوفيس 2021، فننصحك بـ <strong>نسخة أوفيس 365</strong> لأنها تستفيد من المحركات الحديثة وتعطي سرعة فائقة. أما إذا كان جهازك بمواصفات عادية أو تستخدم إصدارات أوفيس قديمة (مثل 2016 أو 2019)، فالخيار الأنسب والآمن هو <strong>النسخة القياسية</strong>.</p>
+    </div>
+
     <div class="faq-item">
         <h4>ماذا أفعل إذا فشل استيراد الأهداف من ملف نموذج الإجابة (الوورد)؟</h4>
         <p>في بعض الأجهزة، قد تمنع إعدادات حماية الويندوز الإكسيل من قراءة البيانات من ملف وورد وهو مغلق. <strong>الحل بسيط:</strong> قم بفتح ملف الوورد (نموذج الإجابة) دعه مفتوحاً في الخلفية، ثم اضغط على زر الاستيراد في الإكسيل مرة أخرى.</p>
